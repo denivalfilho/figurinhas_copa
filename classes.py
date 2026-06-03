@@ -21,3 +21,9 @@ class NodoLista:
     def __init__(self, figurinha):
         self.figurinha = figurinha
         self.proximo = None
+
+class NodoFila:
+
+    def __init__(self, item):
+        self.item = item
+        self.proximo = None
