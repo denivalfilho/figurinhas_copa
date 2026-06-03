@@ -1,3 +1,9 @@
+SELECOES_VALIDAS = (
+    "BRA", "ARG", "FRA", "ESP", "ALE", "ING",
+    "POR", "ITA", "URU", "MEX", "EUA", "JAP",
+    "HOL", "BEL", "CRO", "MAR",
+)
+
 class Figurinha:
 
     def __init__(self, id, nome, pais, posicao, raridade):
