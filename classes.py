@@ -75,3 +75,13 @@ class Historico(Fila):
 
     def registrar(self, descricao):
         self.enqueue(descricao)
+
+    def listar(self):
+        """Percorre a fila e mostra todas as trocas, sem remover nada."""
+        if self.esta_vazia():
+            print(" (nenhuma troca registrada)")
+            return
+        atual = self._inicio
+        while atual is not None:
+            print(" -", atual.item)
+            atual = atual.proximo
