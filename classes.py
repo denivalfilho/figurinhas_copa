@@ -70,3 +70,5 @@ class Fila:
 
     def tamanho(self):
         return self._tamanho
+
+class Historico(Fila):
