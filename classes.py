@@ -72,3 +72,6 @@ class Fila:
         return self._tamanho
 
 class Historico(Fila):
+
+    def registrar(self, descricao):
+        self.enqueue(descricao)
