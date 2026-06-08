@@ -130,3 +130,11 @@ class Album:
             atual = atual.proximo
         return False
 
+    def mostrar_album(self):
+        if self._cabeca is None:
+            print(" (album vazio)")
+            return
+        atual = self._cabeca
+        while atual is not None:
+            print(" ", atual.figurinha)
+            atual = atual.proximo
