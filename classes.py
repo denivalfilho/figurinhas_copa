@@ -95,4 +95,12 @@ class Album:
         self.repetidas = Fila()
 
     def quantidade(self):
-        return self._tamanho   
+        return self._tamanho
+
+    def buscar(self, id):
+        atual = self._cabeca
+        while atual is not None:
+            if atual.figurinha.id == id:
+                return atual.figurinha
+            atual = atual.proximo
+        return None
