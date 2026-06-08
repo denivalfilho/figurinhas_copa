@@ -166,3 +166,14 @@ class Album:
             atual = atual.proximo
         if not achou:
             print(" (nenhum jogador encontrado)")
+
+    def buscar_por_selecao(self, pais):
+        achou = False
+        atual = self._cabeca
+        while atual is not None:
+            if atual.figurinha.pais.upper() == pais.upper():
+                print(" ", atual.figurinha)
+                achou = True
+            atual = atual.proximo
+        if not achou:
+            print(" (nenhuma figurinha dessa selecao)")
