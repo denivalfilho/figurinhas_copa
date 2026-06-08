@@ -155,3 +155,14 @@ class Album:
 
     def contar_repetidas(self):
         return self.repetidas.tamanho()
+
+    def buscar_por_jogador(self, nome):
+        achou = False
+        atual = self._cabeca
+        while atual is not None:
+            if nome.lower() in atual.figurinha.nome.lower():
+                print(" ", atual.figurinha)
+                achou = True
+            atual = atual.proximo
+        if not achou:
+            print(" (nenhum jogador encontrado)")
