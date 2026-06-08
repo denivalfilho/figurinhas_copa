@@ -92,4 +92,7 @@ class Album:
         self._cabeca = None
         self._tamanho = 0
         self.total_figurinhas = total_figurinhas
-        self.repetidas = Fila()     
+        self.repetidas = Fila()
+
+    def quantidade(self):
+        return self._tamanho   
