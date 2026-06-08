@@ -77,7 +77,6 @@ class Historico(Fila):
         self.enqueue(descricao)
 
     def listar(self):
-        """Percorre a fila e mostra todas as trocas, sem remover nada."""
         if self.esta_vazia():
             print(" (nenhuma troca registrada)")
             return
@@ -85,3 +84,12 @@ class Historico(Fila):
         while atual is not None:
             print(" -", atual.item)
             atual = atual.proximo
+
+class Album:
+
+    def __init__(self, dono, total_figurinhas):
+        self.dono = dono
+        self._cabeca = None
+        self._tamanho = 0
+        self.total_figurinhas = total_figurinhas
+        self.repetidas = Fila()     
