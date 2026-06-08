@@ -138,3 +138,17 @@ class Album:
         while atual is not None:
             print(" ", atual.figurinha)
             atual = atual.proximo
+
+    def porcentagem(self):
+        if self.total_figurinhas == 0:
+            return 0.0
+        return (self._tamanho / self.total_figurinhas) * 100
+
+    def mostrar_repetidas(self):
+        if self.repetidas.esta_vazia():
+            print(" (nenhuma repetida)")
+            return
+        atual = self.repetidas._inicio
+        while atual is not None:
+            print(" ", atual.item)
+            atual = atual.proximo
