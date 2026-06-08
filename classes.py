@@ -110,7 +110,23 @@ class Album:
             self.repetidas.enqueue(figurinha)
             return "repetida"
         novo = NodoLista(figurinha)
-        novo.proximo = self._cabeca   # insere no inicio da lista (simples e rapido)
+        novo.proximo = self._cabeca
         self._cabeca = novo
         self._tamanho += 1
         return "adicionada"
+
+    def remover(self, id):
+        atual = self._cabeca
+        anterior = None
+        while atual is not None:
+            if atual.figurinha.id == id:
+                if anterior is None:
+                    self._cabeca = atual.proximo
+                else:
+                    anterior.proximo = atual.proximo
+                self._tamanho -= 1
+                return True
+            anterior = atual
+            atual = atual.proximo
+        return False
+
