@@ -104,3 +104,13 @@ class Album:
                 return atual.figurinha
             atual = atual.proximo
         return None
+
+    def adicionar(self, figurinha):
+        if self.buscar(figurinha.id) is not None:
+            self.repetidas.enqueue(figurinha)
+            return "repetida"
+        novo = NodoLista(figurinha)
+        novo.proximo = self._cabeca   # insere no inicio da lista (simples e rapido)
+        self._cabeca = novo
+        self._tamanho += 1
+        return "adicionada"
