@@ -152,3 +152,6 @@ class Album:
         while atual is not None:
             print(" ", atual.item)
             atual = atual.proximo
+
+    def contar_repetidas(self):
+        return self.repetidas.tamanho()
