@@ -80,3 +80,7 @@ def main():
             id = ler_inteiro("Numero a consultar: ")
             fig = meu_album.buscar(id)
             print(fig if fig is not None else "Nao encontrada.")
+
+        elif opcao == "4":
+            print("--- Seu album ---")
+            meu_album.mostrar_album()
