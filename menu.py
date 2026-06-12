@@ -96,3 +96,7 @@ def main():
         elif opcao == "7":
             nome = input("Nome do jogador: ").strip()
             meu_album.buscar_por_jogador(nome)
+
+        elif opcao == "8":
+            pais = ler_selecao("Selecao: ")
+            meu_album.buscar_por_selecao(pais)
