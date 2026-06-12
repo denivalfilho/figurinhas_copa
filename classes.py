@@ -177,3 +177,21 @@ class Album:
             atual = atual.proximo
         if not achou:
             print(" (nenhuma figurinha dessa selecao)")
+
+def efetuar_troca(album_a, album_b, historico):
+
+    if album_a.repetidas.esta_vazia() or album_b.repetidas.esta_vazia():
+        print("Troca nao realizada: os dois precisam ter figurinhas repetidas.")
+        return False
+
+    fig_a = album_a.repetidas.dequeue()   # A entrega
+    fig_b = album_b.repetidas.dequeue()   # B entrega
+
+    album_b.adicionar(fig_a)              # B recebe a de A
+    album_a.adicionar(fig_b)              # A recebe a de B
+
+    descricao = (f"{album_a.dono} deu {fig_a.nome} e recebeu {fig_b.nome} "
+                 f"de {album_b.dono}")
+    historico.registrar(descricao)
+    print("Troca realizada:", descricao)
+    return True
