@@ -63,3 +63,8 @@ def main():
         print("12 - Salvar em arquivo")
         print("13 - Carregar de arquivo")
         print("0  - Sair")
+
+        opcao = input("Escolha: ").strip()
+
+        if opcao == "1":
+            inserir_figurinha(meu_album)
