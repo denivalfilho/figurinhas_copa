@@ -92,3 +92,7 @@ def main():
         elif opcao == "6":
             print(f"Repetidas ({meu_album.contar_repetidas()}):")
             meu_album.mostrar_repetidas()
+
+        elif opcao == "7":
+            nome = input("Nome do jogador: ").strip()
+            meu_album.buscar_por_jogador(nome)
