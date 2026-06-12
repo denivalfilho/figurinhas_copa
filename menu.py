@@ -100,3 +100,6 @@ def main():
         elif opcao == "8":
             pais = ler_selecao("Selecao: ")
             meu_album.buscar_por_selecao(pais)
+
+        elif opcao == "9":
+            efetuar_troca(meu_album, amigo_album, historico)
