@@ -88,3 +88,7 @@ def main():
         elif opcao == "5":
             print(f"Concluido: {meu_album.porcentagem():.1f}% "
                   f"({meu_album.quantidade()}/{meu_album.total_figurinhas})")
+
+        elif opcao == "6":
+            print(f"Repetidas ({meu_album.contar_repetidas()}):")
+            meu_album.mostrar_repetidas()
