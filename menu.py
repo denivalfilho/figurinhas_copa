@@ -107,3 +107,7 @@ def main():
         elif opcao == "10":
             print("Adicionando figurinha ao album do amigo:")
             inserir_figurinha(amigo_album)
+
+        elif opcao == "11":
+            print("--- Historico de trocas ---")
+            historico.listar()
