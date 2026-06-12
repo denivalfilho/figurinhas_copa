@@ -3,3 +3,10 @@ from classes import (
     efetuar_troca, salvar_txt, carregar_txt,
 )
 
+def ler_inteiro(mensagem):
+
+    while True:
+        try:
+            return int(input(mensagem))
+        except ValueError:
+            print("Valor invalido! Digite um numero inteiro.")
