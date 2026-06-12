@@ -68,3 +68,10 @@ def main():
 
         if opcao == "1":
             inserir_figurinha(meu_album)
+
+        elif opcao == "2":
+            id = ler_inteiro("Numero a remover: ")
+            if meu_album.remover(id):
+                print("Figurinha removida.")
+            else:
+                print("Figurinha nao encontrada.")
