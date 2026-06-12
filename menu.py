@@ -103,3 +103,7 @@ def main():
 
         elif opcao == "9":
             efetuar_troca(meu_album, amigo_album, historico)
+
+        elif opcao == "10":
+            print("Adicionando figurinha ao album do amigo:")
+            inserir_figurinha(amigo_album)
