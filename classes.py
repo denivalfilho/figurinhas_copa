@@ -214,3 +214,23 @@ def salvar_txt(album, nome_arquivo):
         arquivo.write(f"R;{f.id};{f.nome};{f.pais};{f.posicao};{f.raridade}\n")
         atual = atual.proximo
     arquivo.close()
+
+def carregar_txt(nome_arquivo):
+
+    arquivo = open(nome_arquivo, "r", encoding="utf-8")
+    cabecalho = arquivo.readline().strip().split(";")
+    dono = cabecalho[0]
+    total = int(cabecalho[1])
+    album = Album(dono, total)
+    for linha in arquivo:
+        partes = linha.strip().split(";")
+        if len(partes) != 6:
+            continue   # ignora linhas estranhas
+        tipo = partes[0]
+        fig = Figurinha(int(partes[1]), partes[2], partes[3], partes[4], partes[5])
+        if tipo == "A":
+            album.adicionar(fig)
+        else:  # tipo == "R"
+            album.repetidas.enqueue(fig)
+    arquivo.close()
+    return album
