@@ -111,3 +111,27 @@ def main():
         elif opcao == "11":
             print("--- Historico de trocas ---")
             historico.listar()
+
+        elif opcao == "12":
+            nome_arq = input("Nome do arquivo (ex.: album.txt): ").strip()
+            salvar_txt(meu_album, nome_arq)
+            print("Album salvo!")
+
+        elif opcao == "13":
+            nome_arq = input("Nome do arquivo (ex.: album.txt): ").strip()
+            try:
+                meu_album = carregar_txt(nome_arq)
+                print("Album carregado!")
+            except FileNotFoundError:
+                print("Arquivo nao encontrado.")
+
+        elif opcao == "0":
+            print("Ate mais!")
+            break
+
+        else:
+            print("Opcao invalida.")
+
+
+if __name__ == "__main__":
+    main()
