@@ -195,3 +195,22 @@ def efetuar_troca(album_a, album_b, historico):
     historico.registrar(descricao)
     print("Troca realizada:", descricao)
     return True
+
+def salvar_txt(album, nome_arquivo):
+
+    arquivo = open(nome_arquivo, "w", encoding="utf-8")
+
+    arquivo.write(f"{album.dono};{album.total_figurinhas}\n")
+
+    atual = album._cabeca
+    while atual is not None:
+        f = atual.figurinha
+        arquivo.write(f"A;{f.id};{f.nome};{f.pais};{f.posicao};{f.raridade}\n")
+        atual = atual.proximo
+
+    atual = album.repetidas._inicio
+    while atual is not None:
+        f = atual.item
+        arquivo.write(f"R;{f.id};{f.nome};{f.pais};{f.posicao};{f.raridade}\n")
+        atual = atual.proximo
+    arquivo.close()
