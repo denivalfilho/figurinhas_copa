@@ -84,3 +84,7 @@ def main():
         elif opcao == "4":
             print("--- Seu album ---")
             meu_album.mostrar_album()
+
+        elif opcao == "5":
+            print(f"Concluido: {meu_album.porcentagem():.1f}% "
+                  f"({meu_album.quantidade()}/{meu_album.total_figurinhas})")
