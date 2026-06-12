@@ -41,4 +41,9 @@ def inserir_figurinha(album):
     else:
         print("Figurinha adicionada ao album!")
 
+def main():
+
+    meu_album = Album("Voce", total_figurinhas=20)     # mude o total se quiser
+    amigo_album = Album("Amigo", total_figurinhas=20)
+    historico = Historico()
 
