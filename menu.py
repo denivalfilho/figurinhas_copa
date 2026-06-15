@@ -3,33 +3,35 @@ from classes import (
     efetuar_troca, salvar_txt, carregar_txt,
 )
 
-def ler_inteiro(mensagem):
 
+def ler_inteiro(mensagem):
     while True:
         try:
             return int(input(mensagem))
         except ValueError:
             print("Valor invalido! Digite um numero inteiro.")
 
-def ler_selecao(mensagem):
 
+def ler_selecao(mensagem):
     while True:
         codigo = input(mensagem).strip().upper()
         if codigo in SELECOES_VALIDAS:
             return codigo
-        print("Selecao invalida! Use um destes codigos:")
+        print("Selecao invalida! Codigos aceitos:")
         print(" ", ", ".join(SELECOES_VALIDAS))
 
-def inserir_figurinha(album):
 
+def inserir_figurinha(album):
     id = ler_inteiro("Numero da figurinha: ")
     if id <= 0:
         print("Numero invalido! Deve ser positivo.")
         return
+
     nome = input("Nome do jogador: ").strip()
     if nome == "":
         print("O nome nao pode ser vazio.")
         return
+
     pais = ler_selecao("Selecao (ex.: BRA): ")
     posicao = input("Posicao: ").strip()
     raridade = input("Raridade (comum/rara/lendaria): ").strip()
@@ -41,10 +43,10 @@ def inserir_figurinha(album):
     else:
         print("Figurinha adicionada ao album!")
 
-def main():
 
-    meu_album = Album("Voce", total_figurinhas=20)     # mude o total se quiser
-    amigo_album = Album("Amigo", total_figurinhas=20)
+def main():
+    meu_album = Album("Voce", total=20)
+    amigo_album = Album("Amigo", total=20)
     historico = Historico()
 
     while True:
@@ -83,11 +85,11 @@ def main():
 
         elif opcao == "4":
             print("--- Seu album ---")
-            meu_album.mostrar_album()
+            meu_album.mostrar()
 
         elif opcao == "5":
             print(f"Concluido: {meu_album.porcentagem():.1f}% "
-                  f"({meu_album.quantidade()}/{meu_album.total_figurinhas})")
+                  f"({meu_album.tamanho}/{meu_album.total})")
 
         elif opcao == "6":
             print(f"Repetidas ({meu_album.contar_repetidas()}):")
@@ -110,7 +112,7 @@ def main():
 
         elif opcao == "11":
             print("--- Historico de trocas ---")
-            historico.listar()
+            historico.mostrar()
 
         elif opcao == "12":
             nome_arq = input("Nome do arquivo (ex.: album.txt): ").strip()
